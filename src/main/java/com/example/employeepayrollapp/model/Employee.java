@@ -9,7 +9,7 @@ import java.util.Date;
 public class Employee {
     @Id
     @GeneratedValue
-    private Long id;
+    private Integer id;
     private String firstName;
     private String lastName;
     private String address;
@@ -31,7 +31,7 @@ public class Employee {
         this.note=note;
         this.startDate=startDate;
     }
-    public Employee(Long id,String firstName,String lastName,String address,String salary,String profilePic,String note){
+    public Employee(Integer id,String firstName,String lastName,String address,String salary,String profilePic,String note){
         super();
         this.id=id;
         this.firstName=firstName;
@@ -46,10 +46,10 @@ public class Employee {
    public Employee(Integer id, String firstName, String lastName, String address, String salary, String profilePic, String note, Date startDate) {
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
     public String getFirstName() {

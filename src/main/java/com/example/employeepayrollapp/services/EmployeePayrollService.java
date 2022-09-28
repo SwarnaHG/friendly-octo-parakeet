@@ -32,20 +32,27 @@ public class EmployeePayrollService {
     }
 
     public Employee editdata(Employee employee, Integer id) {
-        Employee toedit = repository.findById(id).orElse(null);
-        if (toedit != null) {
-            toedit.setId(employee.getId());
-            toedit.setFirstName(employee.getFirstName());
-            toedit.setLastName(employee.getLastName());
-            toedit.setAddress(employee.getAddress());
-            toedit.setSalary(employee.getSalary());
-            toedit.setProfilePic(employee.getProfilePic());
-            toedit.setNote(employee.getNote());
-            toedit.setStartDate(employee.getStartDate());
-            return repository.save(toedit);
-        } else {
+        Optional<Employee> toedit = repository.findById(id);
+       // if (toedit != null) {
+         //   toedit.setId(employee.getId());
+           // toedit.setFirstName(employee.getFirstName());
+            //toedit.setLastName(employee.getLastName());
+          //  toedit.setAddress(employee.getAddress());
+            //toedit.setSalary(employee.getSalary());
+            //toedit.setProfilePic(employee.getProfilePic());
+            //toedit.setNote(employee.getNote());
+            //toedit.setStartDate(employee.getStartDate());
+          //  return repository.save(toedit);
+        //} else {
+          //  return null;
+        //}
+        if(toedit.isEmpty()){
             return null;
+
         }
+        Employee emp=new Employee(id,employee);
+       // repository.save(emp);
+        return repository.save(emp);
     }
 
     public Employee updateDataById(Integer id, Employee employee) {

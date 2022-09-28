@@ -20,7 +20,7 @@ public class EmpController {
     @GetMapping("/get/{id}")
     public Employee employee(@PathVariable Integer id, @RequestParam String firstname, String lastname, String address, String salary, String pic, String note) {
         Employee emp = new Employee();
-        emp.setId(Long.valueOf(id));
+        emp.setId(id);
         emp.setFirstName(firstname);
         emp.setLastName(lastname);
         emp.setAddress(address);
@@ -38,7 +38,7 @@ public class EmpController {
 
     @PutMapping("/edit/{id}")
     public Employee editbyid(@PathVariable Integer id,@RequestBody Employee employee){
-        return employeeService.updateDataById(id, employee);
+        return employeeService.editdata(employee,id);
     }
     @GetMapping("/getbyid{id}")
     public Optional<Employee> getById(@PathVariable Integer id){
