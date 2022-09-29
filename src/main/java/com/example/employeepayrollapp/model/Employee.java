@@ -43,8 +43,8 @@ public class Employee {
         this.startDate=startDate;
     }
 
-   public Employee(Integer id, String firstName, String lastName, String address, String salary, String profilePic, String note, Date startDate) {
-    }
+  // public Employee(Integer id, String firstName, String lastName, String address, String salary, String profilePic, String note, Date startDate) {
+    //}
 
     public Integer getId() {
         return id;
